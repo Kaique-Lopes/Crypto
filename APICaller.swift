@@ -10,4 +10,18 @@ import Foundation
 
 final class APICaller {
     static let shared = APICaller()
+    
+    private struct Constants {
+        static let apiKey = ""
+    }
+    
+    private init() {}
+    
+    // MARK: - Public
+    
+    public func getAllCryptoData(
+        completion: @escaping (Result<[String], Error>) -> Void
+    ) {
+        
+    }
 }
