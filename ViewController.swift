@@ -13,7 +13,7 @@ import UIKit
 class ViewController: UIViewController {
     private let tableview: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
-        tableView.register(, forCellReuseIdentifier: )
+        tableView.register(CryptoTableViewCell.self, forCellReuseIdentifier: CryptoTableViewCell.identifier)
         return tableView
     }()
     
