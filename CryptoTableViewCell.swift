@@ -24,7 +24,7 @@ class CryptoTableViewCell: UITableViewCell {
     
     // MARK: - Configure
 
-    func configure() {
+    func configure(with viewModel: CryptoTableViewCellViewModel) {
         
     }
 }
