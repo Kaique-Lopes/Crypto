@@ -7,7 +7,24 @@
 
 import UIKit
 
+struct CryptoTableViewCellViewModel {
+    let name: String
+    let symbol: String
+    let price: String
+}
+
 class CryptoTableViewCell: UITableViewCell {
     static let identifier = "CryptoTableViewCell"
+    
+    // MARK: - Subviews
+    
+    // MARK: - Init
+    
+    // MARK: - Layout
+    
+    // MARK: - Configure
 
+    func configure() {
+        
+    }
 }

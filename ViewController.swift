@@ -24,6 +24,15 @@ class ViewController: UIViewController {
         view.addSubview(tableview)
         tableview.dataSource = self
         tableview.delegate = self
+        
+        APICaller.shared.getAllCryptoData { result in
+            switch result {
+            case .success(let models):
+                print(models.count)
+            case .failure(let error):
+                print("Error \(error)")
+            }
+        }
     }
     
     override func viewDidLayoutSubviews() {
