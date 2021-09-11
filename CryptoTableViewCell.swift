@@ -17,11 +17,37 @@ class CryptoTableViewCell: UITableViewCell {
     static let identifier = "CryptoTableViewCell"
     
     // MARK: - Subviews
+    private let nameLabel: UILabel = {
+        let nameLabel = UILabel()
+        nameLabel.font = .systemFont(ofSize: 20, weight: .medium)
+        return nameLabel
+    } ()
     
+    private let symbolLabel: UILabel = {
+        let symbolLabel = UILabel()
+        symbolLabel.font = .systemFont(ofSize: 20, weight: .regular)
+        return symbolLabel
+    } ()
+    
+    private let priceLabel: UILabel = {
+        let priceLabel = UILabel()
+        priceLabel.textColor = .green
+        priceLabel.font = .systemFont(ofSize: 20, weight: .semibold)
+        return priceLabel
+    } ()
+        
     // MARK: - Init
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    }
     
+    required init?(coder: NSCoder) {
+        fatalError()
+    }
     // MARK: - Layout
-    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    }
     // MARK: - Configure
 
     func configure(with viewModel: CryptoTableViewCellViewModel) {
