@@ -11,7 +11,12 @@ import UIKit
 // MVVM
 
 class ViewController: UIViewController {
-
+    private let tableview: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .grouped)
+        tableView.register(, forCellReuseIdentifier: )
+        return tableView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
