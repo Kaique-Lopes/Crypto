@@ -50,10 +50,37 @@ class CryptoTableViewCell: UITableViewCell {
     // MARK: - Layout
     override func layoutSubviews() {
         super.layoutSubviews()
+        
+        nameLabel.sizeToFit()
+        symbolLabel.sizeToFit()
+        priceLabel.sizeToFit()
+        
+        nameLabel.frame = CGRect(
+            x: 5,
+            y:0,
+            width: contentView.frame.size.width/2,
+            height: contentView.frame.size.height/2
+        )
+        
+        symbolLabel.frame = CGRect(
+            x: 5,
+            y: contentView.frame.size.height/2,
+            width: contentView.frame.size.width/2,
+            height: contentView.frame.size.height/2
+        )
+        
+        priceLabel.frame = CGRect(
+            x: contentView.frame.size.width/2,
+            y: 0,
+            width: (contentView.frame.size.width/2)-5,
+            height: contentView.frame.size.height
+        )
     }
     // MARK: - Configure
 
     func configure(with viewModel: CryptoTableViewCellViewModel) {
-        
+        nameLabel.text = viewModel.name
+        priceLabel.text = viewModel.price
+        symbolLabel.text = viewModel.symbol
     }
 }

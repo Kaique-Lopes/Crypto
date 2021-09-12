@@ -18,6 +18,8 @@ class ViewController: UIViewController {
         return tableView
     }()
     
+    private var viewModels = [CryptoTableViewCellViewModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Crypto Tracker"
@@ -25,7 +27,7 @@ class ViewController: UIViewController {
         tableview.dataSource = self
         tableview.delegate = self
         
-        APICaller.shared.getAllCryptoData { result in
+        APICaller.shared.getAllCryptoData { [weak self] result in
             switch result {
             case .success(let models):
                 print(models.count)
