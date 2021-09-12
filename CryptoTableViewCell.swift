@@ -31,7 +31,7 @@ class CryptoTableViewCell: UITableViewCell {
     
     private let priceLabel: UILabel = {
         let priceLabel = UILabel()
-        priceLabel.textColor = .green
+        priceLabel.textColor = .systemGreen
         priceLabel.font = .systemFont(ofSize: 20, weight: .semibold)
         return priceLabel
     } ()
@@ -39,6 +39,9 @@ class CryptoTableViewCell: UITableViewCell {
     // MARK: - Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        contentView.addSubview(nameLabel)
+        contentView.addSubview(symbolLabel)
+        contentView.addSubview(priceLabel)
     }
     
     required init?(coder: NSCoder) {
