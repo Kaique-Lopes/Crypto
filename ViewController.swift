@@ -38,6 +38,9 @@ class ViewController: UIViewController {
                         price: "$1"
                     )
                 })
+                DispatchQueue.main.async {
+                    self?.tableview.reloadData()
+                }
             case .failure(let error):
                 print("Error \(error)")
             }
