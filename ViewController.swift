@@ -30,7 +30,14 @@ class ViewController: UIViewController {
         APICaller.shared.getAllCryptoData { [weak self] result in
             switch result {
             case .success(let models):
-                print(models.count)
+                self?.viewModels = models.compactMap({
+                    //NumberFormatter
+                    CryptoTableViewCellViewModel(
+                        name: $0.name ?? "N/A",
+                        symbol: $0.asset_id,
+                        price: "$1"
+                    )
+                })
             case .failure(let error):
                 print("Error \(error)")
             }
