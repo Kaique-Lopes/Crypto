@@ -64,7 +64,7 @@ extension ViewController: UITableViewDataSource {
         guard let cell = tableview.dequeueReusableCell(withIdentifier: CryptoTableViewCell.identifier, for: indexPath) as? CryptoTableViewCell else {
             fatalError()
         }
-        cell.textLabel?.text = "Kaique Lopes"
+        cell.configure(with: viewModels[indexPath.row])
         return cell
     }
     
